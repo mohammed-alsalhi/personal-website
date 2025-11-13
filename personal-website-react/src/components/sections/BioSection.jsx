@@ -45,14 +45,51 @@ const BioSection = () => {
         </p>
       </div>
 
-      <motion.p
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="bio-location"
+        className="bio-location-container"
       >
-        Urbana, IL • Muscat, Oman
-      </motion.p>
+        <motion.div
+          className="location-item current-location"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <motion.span
+            className="location-indicator"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.7, 1, 0.7]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <span className="location-text">Urbana, IL</span>
+        </motion.div>
+
+        <motion.span
+          className="location-separator"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+        >
+          •
+        </motion.span>
+
+        <motion.div
+          className="location-item home-location"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <span className="location-text">Muscat, Oman</span>
+        </motion.div>
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0 }}

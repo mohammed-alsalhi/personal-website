@@ -8,8 +8,8 @@ const Skills = () => {
       "C++",
       "HTML/CSS"
     ],
-    "Tools & Technologies": [
-      "Git & GitHub"
+    "Development": [
+      "Android Development"
     ]
   };
 
