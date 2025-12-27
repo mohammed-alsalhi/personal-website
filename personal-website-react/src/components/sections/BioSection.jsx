@@ -69,7 +69,7 @@ const BioSection = () => {
               ease: "easeInOut"
             }}
           />
-          <span className="location-text">Urbana, IL</span>
+          <span className="location-text">Muscat, Oman</span>
         </motion.div>
 
         <motion.span
