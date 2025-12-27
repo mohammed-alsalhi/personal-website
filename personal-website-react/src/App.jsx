@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { useTheme } from './hooks/useTheme';
 import GridBackground from './components/backgrounds/GridBackground';
 import ParticleBackground from './components/backgrounds/ParticleBackground';
 import LoadingScreen from './components/ui/LoadingScreen';
+import TopNav from './components/layout/TopNav';
 import Sidebar from './components/layout/Sidebar';
-import Projects from './components/sections/Projects';
-import Skills from './components/sections/Skills';
-import AboutSection from './components/sections/AboutSection';
-import Footer from './components/layout/Footer';
+import HomePage from './pages/HomePage';
+import BlogListing from './components/blog/BlogListing';
+import BlogPost from './components/blog/BlogPost';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -29,14 +30,17 @@ function App() {
       {showParticles && <ParticleBackground />}
       {isLoading && <LoadingScreen />}
 
+      <TopNav />
+
       <div className="split-layout">
         <Sidebar toggleTheme={toggleTheme} toggleParticles={toggleParticles} showParticles={showParticles} />
         <main className="main-content">
           <div className="main-content-wrapper">
-            <Projects />
-            <Skills />
-            <AboutSection />
-            <Footer />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/blog" element={<BlogListing />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+            </Routes>
           </div>
         </main>
       </div>
