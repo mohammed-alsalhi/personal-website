@@ -1491,7 +1491,7 @@ section {
 .top-nav {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 33.33%;
     right: 0;
     height: 56px;
     background-color: var(--bg-primary);
@@ -2186,6 +2186,12 @@ section {
 }
 
 /* ===== RESPONSIVE STYLES ===== */
+
+@media (max-width: 1024px) {
+    .top-nav {
+        left: 0;
+    }
+}
 
 @media (max-width: 768px) {
     .nav-links {
