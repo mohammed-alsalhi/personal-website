@@ -1378,27 +1378,7 @@ section {
     opacity: 0.6;
 }
 
-/* Navigation Glow */
-.nav-link {
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--text-primary);
-    transition: width 0.3s ease;
-    box-shadow: 0 0 10px var(--text-primary);
-}
-
-.nav-link:hover::before {
-    width: 100%;
-}
+/* Removed general .nav-link glow to avoid conflicts with specific nav implementations */
 
 /* Responsive Animations */
 @media (max-width: 1024px) {
@@ -1522,21 +1502,43 @@ section {
     gap: 2rem;
 }
 
-.nav-link {
+/* Top nav links - scoped to avoid conflicts */
+.top-nav .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    transition: all 0.3s ease;
+    position: relative;
     font-family: var(--font-body);
 }
 
-.nav-link:hover {
+.top-nav .nav-link:hover {
     color: var(--text-primary);
 }
 
-.nav-link.active {
+.top-nav .nav-link.active {
     color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Subtle underline indicator - similar to sidebar arrow */
+.top-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.top-nav .nav-link:hover::after,
+.top-nav .nav-link.active::after {
+    width: 100%;
 }
 
 .mobile-menu-button {
@@ -2107,7 +2109,7 @@ section {
     gap: 2rem;
 }
 
-.nav-link {
+.blog-post-nav-link {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -2119,7 +2121,7 @@ section {
     transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+.blog-post-nav-link:hover {
     border-color: var(--text-primary);
     transform: translateY(-2px);
 }

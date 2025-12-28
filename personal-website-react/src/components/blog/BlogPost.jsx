@@ -81,13 +81,13 @@ const BlogPost = () => {
       <div className="blog-post-navigation">
         <div className="nav-links-container">
           {prev && (
-            <Link to={`/blog/${prev.slug}`} className="nav-link prev-link">
+            <Link to={`/blog/${prev.slug}`} className="blog-post-nav-link prev-link">
               <span className="nav-label">← Previous</span>
               <span className="nav-title">{prev.title}</span>
             </Link>
           )}
           {next && (
-            <Link to={`/blog/${next.slug}`} className="nav-link next-link">
+            <Link to={`/blog/${next.slug}`} className="blog-post-nav-link next-link">
               <span className="nav-label">Next →</span>
               <span className="nav-title">{next.title}</span>
             </Link>
