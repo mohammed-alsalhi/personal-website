@@ -20,14 +20,16 @@ const Sidebar = ({ toggleTheme, toggleParticles, showParticles }) => {
           {showParticles ? '✨' : '🚫'}
         </button>
       </div>
-      <BioSection />
-      <ContactLinks />
       {isHomePage && (
-        <nav className="nav-links-sidebar">
-          <a href="#projects" className="nav-link-sidebar">Projects</a>
-          <a href="#skills" className="nav-link-sidebar">Skills</a>
-          <a href="#about" className="nav-link-sidebar">About</a>
-        </nav>
+        <>
+          <BioSection />
+          <ContactLinks />
+          <nav className="nav-links-sidebar">
+            <a href="#projects" className="nav-link-sidebar">Projects</a>
+            <a href="#skills" className="nav-link-sidebar">Skills</a>
+            <a href="#about" className="nav-link-sidebar">About</a>
+          </nav>
+        </>
       )}
     </aside>
   );
