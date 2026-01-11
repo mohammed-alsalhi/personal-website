@@ -87,7 +87,7 @@ const BioSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          <span className="location-text">Muscat, Oman</span>
+          <span className="location-text">Urbana, IL</span>
         </motion.div>
       </motion.div>
 

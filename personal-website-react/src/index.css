@@ -3,7 +3,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth theme transitions - exclude animated elements */
+body,
+.sidebar,
+.main-content,
+.top-nav,
+.project-card,
+.blog-card,
+.btn,
+nav,
+header,
+footer,
+section,
+article,
+div:not([class*="motion"]):not([class*="animate"]),
+span:not(.location-indicator):not([class*="motion"]),
+a,
+button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 :root {
@@ -115,13 +134,21 @@ body {
     left: 0;
     top: 0;
     height: 100vh;
-    padding: 1.75rem 1.5rem 5rem 1.5rem;
+    padding: 1.75rem 1.5rem 1.5rem 1.5rem;
     background-color: var(--bg-secondary);
     border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    align-items: flex-start;
     z-index: 100;
+}
+
+.sidebar > * {
+    margin-bottom: 0.6rem;
+}
+
+.sidebar > *:last-child {
+    margin-bottom: 0;
 }
 
 /* Right Content - Scrollable with hidden scrollbar */
